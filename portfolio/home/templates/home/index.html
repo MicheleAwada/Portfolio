@@ -1,0 +1,265 @@
+{% load static %}
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michele Portfolio</title>
+    <link rel="stylesheet" href="{% static 'home/index.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+
+    <link rel="icon" type="image/x-icon"  href="{% static 'home/images/favicon.svg' %}">
+
+    {% tailwind_css %}
+
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function(event) { 
+            var scrollpos = localStorage.getItem('scrollpos');
+            if (scrollpos) window.scrollTo(0, scrollpos);
+        });
+
+        window.onbeforeunload = function(e) {
+            localStorage.setItem('scrollpos', window.scrollY);
+        };
+    </script>
+</head>
+<body>
+    <main>
+        <header class="fixed top-0 left-0 h-12 justify-between bg-transparent z-50 flex p-4 box-content">
+            <a href=""><img src="{% static 'home/images/logo.svg' %}" class="rounded-xl h-12"></a>
+            <button onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'});" class="bg-emerald-400 text-white px-5 py-1 h-8 rounded-xl box-content mr-8">Contact</button>
+        </header>
+        <div id="start_container" class="darkblue relative">
+            <p id="starttxt" class="center">
+                hello, <span class="">Michele</span>
+            </p>
+            <img id="star1" class="object-contain" src="{% static 'home/images/star.svg' %}">
+            <img id="star2" class="" src="{% static 'home/images/star2.svg' %}">
+        </div>
+        <div id="whoami">
+            <p class="main center">
+                Who are you
+            </p>
+            <p class="center sub mx-2">
+                I am a Full-Stack <span class="underlined ">Web Developer</span> and <span class="underline">Graphic Designer</span>.
+            </p>
+        </div>
+        <div id="skills" class="gradientblue center">
+            <img src="{% static 'home/images/wave.svg' %}"> 
+            <p>
+                What are your qualifications?
+            </p>
+            <section id="langs">
+                <div id="frontend" class="type">
+                    <p>
+                        Front End
+                    </p>
+                    <div>
+                        <div class="lang gold">
+                            <i class="devicon-html5-plain"></i>
+                        </div>
+                        <div class="lang">
+                            <i class="devicon-css3-plain"></i>
+                        </div>
+                        <div class="lang gold">
+                            <i class="devicon-javascript-plain"></i>
+                        </div>
+                        <div class="lang">
+                            <i class="devicon-sass-original"></i>
+                        </div>
+                        <div class="lang">
+                            <i class="devicon-jquery-plain"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="backend" class="type">
+                    <p>
+                        Backend End
+                    </p>
+                    <div>
+                        <div class="lang gold">
+                            <i class="devicon-python-plain"></i>
+                        </div>
+                        <div class="lang gold">
+                            <i class="devicon-django-plain"></i>
+                        </div>
+                        <div class="lang">
+                            <i class="devicon-postgresql-plain"></i>
+                        </div>
+                    </div>
+                </div>
+                <div id="tools" class="type">
+                    <p>
+                        Tools
+                    </p>
+                    <div>
+                        <div class="lang gold">
+                            <i class="devicon-illustrator-plain"></i>
+                        </div>
+                        <div class="lang gold">
+                            <i class="devicon-git-plain"></i>
+                        </div>
+                        <div class="lang gold">
+                            <i class="devicon-github-original"></i>
+                        </div>
+                        <div class="lang">
+                            <i class="devicon-bootstrap-plain"></i>
+                        </div>
+                        <div class="lang">
+                            <i class="devicon-tailwindcss-plain"></i>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div id="white-space">
+
+        </div>
+        <div id ="experience">
+            <!-- <p>What have you done so far?</p> -->
+            <p>What are your experiences?</p>
+            <section>
+                <div id="graphic-designer">
+                    <div>
+                        <p class="main"><span class="bigbold">Graphic designier</span> since <span class="superbold">2020</span></p>
+                        <p>
+                            I've always had a interest in arts and design,
+                        </p>
+                        <br>
+                        <p>
+                            and was <span class="bigbold">hired</span> as a international marketing director in 2020.
+                        </p>
+                        <br>
+                        <p>
+                            From drawing on paper, to creating vectors, to website design.
+                        </p>
+                    </div>
+                    <p class="bold big underlined">
+                        I've always loved to create
+                    </p>
+                </div>
+                <div id="coding">
+                    <div>
+                        <p class="main"><span class="bold">Coding</span> since 2022</p>
+                        <p>
+                            My love of technology got me to discover coding
+                        </p>
+                        <br>
+                        <p>
+                            I love pushing myself to learn more and more everyday.
+                        </p>
+                    </div>
+                    <p class="bold big underlined">
+                        I'm a Tech Whiz
+                    </p>
+                </div>
+            </section>
+        </div>
+        <div id="projects" class="relative">
+            <p class="text-white">
+                What are your projects?
+            </p>
+            <div class="project border-y-4 border-blue-600 flex flex-col lg:flex-row gap-4 justify-around p-5 lg:px-16">
+                <div id="info" class="text-white">
+                    <p class="main p-0 superbold text-3xl text-white">Friendly Fur</p>
+                    <p class="explanation text-white">
+                        is a eccommers website for dog food, treats and toys
+                    </p>
+                    <br>
+                    <p>
+                        <span class="bigbold text-white">It includes complex features like:</span>
+                    </p>
+                    <ul class="list-disc pl-4 ml-3">
+                        <li><span class="bold text-white">Allergy detector </span>feature for dogs.<br></li>
+                        <li>Fully coded authentication system.<br></li>
+                        <li>Product with ingredients(used to detect allergies).</li>
+                        <li>Search with ranking system.</li>
+                        <li>Filter products by price.</li>
+                        <li>Modern and user friendly design.</li>
+                        <li>Multiple autocomplete field for allergies and breed of Dog in dog's signup</li>
+                    </ul>
+
+                    <br>
+
+                    <p class="text-white bold">
+                        Basic features like:
+                    </p>
+                    <ul class="list-disc pl-4 ml-3">
+                        <li>User Cart.</li>
+                        <li>Quantity for cart item.</li>
+                        <li>Page for product brand.</li>
+                    </ul>
+                </div>
+                <img src="{% static 'home/images/FriendlyFur/main.png' %}" alt="Friendly Fur" class="rounded w-full lg:w-3/5 object-contain">  
+            </div>
+        </div>
+
+        <div id="bg-grass">
+            <div id="chickens" class="z-10">
+                <img id="kentucky" src="{% static 'home/images/kentucky.svg' %}">
+            </div>
+            <img  src="{% static 'home/images/bg-grass.svg' %}">
+        </div>
+        <div id="contact">
+            <p class="main">How can i <span class="bigbold">contact you?</span></p>
+            <section class="flex flex-col gap-4">
+                <div id="form-container">
+                    {% for message in messages %}
+                        <div class="messages">
+                            <p>{{ message }}</p>
+                        </div>
+                    {% endfor %}
+                    <form method="POST">
+                        {% csrf_token %}
+                        <fieldset>
+                            {% for field in form %}
+                                {% if field.name == 'name' %}<div id="name_n_email">{% endif %}
+                                {% if field.name != 'body' %}
+                                    {% if not field.errors %}
+                                        <div id="fielddiv{{field.name}}" class="fielddiv{% if field.errors %} error{% endif %}">
+                                            <div class="relative">
+                                                <input class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 light:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none light:text-white light:border-gray-600 light:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" name={{field.name}} type="{{ field.field.widget.input_type }}" id="{{ field.id_for_label }}" placeholder="">
+                                                <label class="absolute text-sm text-gray-500 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-focus:text-blue-600 peer-focus:light:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        <div>
+                                            <div class="relative">
+                                                <input name="{{field.name}}" type="{{ field.field.widget.input_type }}" id="{{ field.id_for_label }}" aria-describedby="filled_error_help" class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 light:bg-gray-700 border-0 border-b-2 appearance-none light:text-white light:border-red-500 focus:outline-none focus:ring-0 border-red-600 focus:border-red-600 light:focus-border-red-500 peer" placeholder=" " />
+                                                <label for="{{ field.id_for_label }}" class="absolute text-sm duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 text-red-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4">{{field.label}}</label>
+                                            </div>
+                                            <p id="filled_error_help" class="mt-0.5 mb-2 text-xs text-red-500 light:text-red-400 py-2 px-4 bg-gray-100 rounded-t rounded-b-xl"><span class="font-medium text-red-600 underlined">Whops!</span> {{field.errors|join:", "}}</p>
+                                        </div>
+                                    {% endif %}
+                                {% else %}
+                                    <textarea name="{{ field.name }}" id="{{ field.id_for_label }}" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 border border-gray-300 round-none focus:ring-blue-500 focus:border-blue-500 light:bg-gray-700 light:border-light-600 placeholder-gray-500 light:text-white light:focus:ring-blue-500 light:focus:border-blue-500" placeholder="Write your message..."></textarea>
+                                {% endif %}
+                                {% if field.name == 'email' %}</div>{% endif %}
+                            {% endfor %}
+                        </fieldset>
+                        <button type="submit" class="mx-auto">Contact</button>
+                    </form>
+                </div>
+                <div class="flex flex-col lg:flex-row items-center lg:items-end gap-6 lg:gap-0 mb-4 mx-4">
+                    <div id="details" class="inline border-white border w-96 rounded-lg">
+                        <p class="text-white text-xl bold">Contact Info:</p>
+                        <ul class="text-white">
+                            <li class=""><p class="m-0 p-0">Full Name: Michele Awada</p></li>
+                            <li class=""><p class="m-0 p-0">Email: micheleawada2@gmail.com</p></li>
+                        </ul>
+                    </div>
+                    <div id="social" class="flex justify-evenly w-48">
+                        <a href="https://www.linkedin.com/in/michele-awada-396949202/" target="_blank" id="linkedin">
+                            <svg viewBox="0 0 128 128" class="h-10 lg:h-14 rounded-lg">
+                                <path fill="#0076b2" d="M116 3H12a8.91 8.91 0 00-9 8.8v104.42a8.91 8.91 0 009 8.78h104a8.93 8.93 0 009-8.81V11.77A8.93 8.93 0 00116 3z"></path><path fill="#fff" d="M21.06 48.73h18.11V107H21.06zm9.06-29a10.5 10.5 0 11-10.5 10.49 10.5 10.5 0 0110.5-10.49M50.53 48.73h17.36v8h.24c2.42-4.58 8.32-9.41 17.13-9.41C103.6 47.28 107 59.35 107 75v32H88.89V78.65c0-6.75-.12-15.44-9.41-15.44s-10.87 7.36-10.87 15V107H50.53z"></path>
+                            </svg>
+                        </a>
+                        <a href="mailto:micheleawada2@gmail.com"><img src="{% static 'home/images/mail.svg' %}" alt="Email" class="h-10 lg:h-14 rounded-lg"></a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

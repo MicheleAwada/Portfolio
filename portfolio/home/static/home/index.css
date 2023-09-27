@@ -1,0 +1,419 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+html {
+  font-size: 14px;
+}
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
+@media (min-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+body, main {
+  height: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+p, span, a, h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+  color: #e6f1f7;
+  font-size: 16px;
+}
+
+.darkblue {
+  background-color: #1B1E3A;
+}
+
+.gradientblue {
+  background-image: linear-gradient(to bottom, #33396e, #3c8fbc);
+}
+
+.bold, #projects n.project .info .main, #whoami p.sub {
+  font-weight: 500 !important;
+}
+
+.superbold, #whoami p.main {
+  font-weight: 700 !important;
+}
+
+.bigbold {
+  font-weight: 600 !important;
+}
+
+.big, #projects n.project .info .main, #whoami p.main {
+  font-size: 1.6180339888em !important;
+}
+
+.underlined {
+  text-decoration: underline;
+}
+
+.center {
+  text-align: center;
+}
+
+main {
+  width: 100%;
+}
+
+header {
+  width: inherit;
+}
+
+#start_container {
+  height: 88vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#start_container #starttxt {
+  font-size: 3.5rem;
+  font-style: italic;
+  font-weight: 100;
+}
+#start_container #starttxt > span {
+  font-size: 1em;
+  font-style: initial;
+  font-weight: 100;
+}
+#start_container #star1 {
+  position: absolute;
+  left: 15.4375%;
+  top: 79.444444444%;
+  height: 32px;
+  width: auto;
+}
+#start_container #star2 {
+  position: absolute;
+  left: 73.177083333%;
+  top: 21.296296296%;
+  height: 20px;
+}
+
+#whoami {
+  background-image: linear-gradient(to bottom, #1B1E3A, #2b305d);
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+#whoami p.sub {
+  padding-bottom: 120px;
+  font-size: 1.5em;
+}
+#whoami p.sub span {
+  font-size: inherit;
+}
+#whoami p.main {
+  padding: 6vmin 0;
+}
+
+#skills {
+  padding: 0;
+}
+#skills p {
+  font-size: 2em;
+  padding: 12vmin 0 6vmin 0;
+}
+
+section#langs {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  background-color: transparent;
+  padding: 4vmin 0;
+}
+section#langs .type {
+  padding: 1vmin 4vmin;
+  display: flex;
+  flex-flow: column nowrap;
+}
+section#langs .type > div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-around;
+  align-items: center;
+}
+section#langs #frontend {
+  flex-grow: 2;
+}
+section#langs #backend {
+  flex-grow: 2;
+}
+section#langs #tools {
+  flex-grow: 1;
+}
+section#langs .lang {
+  margin: 10px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.25vmax;
+  border-radius: 25px;
+  border: 1px white solid;
+  height: 4vmax;
+  width: 4vmax;
+  height: 70px;
+  width: 70px;
+}
+section#langs .lang.gold {
+  border: 3px #FCF300 solid;
+}
+section#langs .lang i {
+  font-size: 1.75vmax;
+  font-size: 40px;
+  color: #e6f1f7;
+}
+
+#white-space {
+  height: 12vmin;
+  width: 100%;
+  background-image: linear-gradient(#3c8fbc, #67aace);
+}
+
+#experience {
+  background-color: #67aace;
+}
+#experience p {
+  font-size: 2em;
+  color: white;
+}
+#experience > p {
+  padding: 6vmin 0;
+  text-align: center;
+}
+#experience > section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: stretch;
+  align-content: stretch;
+  width: 100%;
+  height: 100%;
+}
+#experience > section #graphic-designer {
+  background-color: #F991CC;
+}
+#experience > section #coding {
+  background-color: #9479ed;
+}
+#experience > section #coding * {
+  color: white;
+}
+#experience > section > div {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  flex-grow: 1;
+  border-radius: 5vmin;
+  margin: 4vmin;
+  padding: 4vmin;
+}
+#experience > section > div p {
+  display: inline;
+  color: white;
+  text-align: left;
+  font-size: 1em;
+  padding: 0;
+  padding-left: 0vmin;
+}
+#experience > section > div p span {
+  color: white;
+}
+#experience > section > div p.bold.big, #experience > section > div #projects n.project .info p.main, #projects n.project .info #experience > section > div p.main, #experience > section > div #whoami p.big.sub, #whoami #experience > section > div p.big.sub, #experience > section > div #whoami p.bold.main, #whoami #experience > section > div p.bold.main, #experience > section > div #whoami p.sub.main, #whoami #experience > section > div p.sub.main {
+  display: block;
+  margin-top: auto;
+  padding-top: 2vmin;
+}
+#experience > section > div p.main {
+  display: block;
+  text-align: left;
+  font-size: 2em;
+  padding: 0 0 2vmin 1vmin;
+  padding-left: 0;
+  color: #e6f1f7;
+}
+#experience > section > div p.main span {
+  font-size: 1em;
+}
+
+#projects {
+  width: 100%;
+  background-image: linear-gradient(#67aace, #add1e4);
+}
+#projects > p {
+  font-size: 2em;
+  padding: 6vmin 0;
+  text-align: center;
+}
+#projects .project {
+  border-top-color: rgba(255, 255, 255, 0.2);
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+#projects n.project {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 6vmin;
+  justify-content: space-between;
+  align-items: stretch;
+  align-content: stretch;
+  background-color: #f37490;
+  border: none;
+  border-radius: 5vmin;
+  margin: 7vmin 0 0 0;
+  padding: 5vmin;
+}
+#projects n.project .info .main {
+  font-size: 2.6180339888em;
+  padding-bottom: 2vmin;
+}
+#projects n.project .info p {
+  color: white;
+}
+#projects n.project .info p.explanation {
+  padding-bottom: 1rem;
+}
+#projects n.project .info ul {
+  padding-left: 1.2rem;
+  list-style-type: disc;
+  color: white;
+}
+#projects n.project .info ul li {
+  margin-left: 1.25rem;
+  color: white;
+}
+#projects n.project .spliter {
+  background-color: white;
+  width: 2px;
+  height: 100%;
+  margin: 0 7vmin;
+}
+#projects n.project .spacer {
+  background-color: transparent;
+  width: 2px;
+  height: 100%;
+  margin: 0 7vmin;
+}
+#projects n.project .image {
+  display: flex;
+  justify-content: center;
+  height: 50vh;
+}
+#projects n.project .image img {
+  border-radius: 1vmin;
+  object-fit: contain;
+}
+
+#bg-grass {
+  position: relative;
+  height: 42.291666666vw;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #add1e4;
+}
+#bg-grass > img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+#bg-grass #chickens {
+  position: absolute;
+  bottom: 1.035460349vw;
+  width: 100%;
+  height: 20vw;
+}
+#bg-grass #chickens #kentucky {
+  position: absolute;
+  bottom: -0.69vw;
+  right: 10vw;
+  height: 10vw;
+  width: auto;
+  object-fit: contain;
+}
+
+#contact {
+  background-image: url("images/dirt.svg");
+}
+#contact p.main {
+  text-align: center;
+  font-size: 2em;
+  padding: 6vmin 0;
+}
+#contact p.main span {
+  font-size: 1em;
+}
+#contact #form-container {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+#contact #form-container .messages {
+  background-color: #9479ed;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+}
+#contact #form-container form {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2vmin;
+  padding: 4vmin 5vmin;
+  width: 64vw;
+}
+#contact #form-container form fieldset {
+  width: 100%;
+  border: 1px white solid;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 4px;
+}
+#contact #form-container form fieldset #name_n_email {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 4px;
+}
+#contact #form-container form fieldset #name_n_email > div {
+  flex-grow: 1;
+  min-width: 16rem;
+  display: flex;
+  flex-flow: column nowrap;
+}
+#contact #form-container form fieldset #name_n_email > div > div {
+  display: block;
+  width: 100%;
+}
+#contact #form-container form fieldset #id_body {
+  height: 10vmin;
+}
+#contact #form-container form fieldset input, #contact #form-container form fieldset textarea {
+  border-radius: 4px;
+}
+#contact #form-container form button[type=submit] {
+  margin-top: 4vmin;
+  display: block;
+  width: 100px;
+  background-color: #F3728B;
+  border-radius: 1vmin;
+  padding: 0.75vmin 1vmin;
+  color: white;
+}
+
+#details {
+  padding: 4vmin 5vmin;
+}/*# sourceMappingURL=index.css.map */
