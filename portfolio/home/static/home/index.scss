@@ -86,7 +86,8 @@ header {
 }
 
 #whoami {
-    background-image: linear-gradient(to bottom, #1B1E3A, lighten(#1B1E3A, 10%));
+    background-image: linear-gradient(#1B1E3A, lighten(#1B1E3A, 10%));
+    background-size: cover;
     margin: 0;
     padding: 0;
     border:none;
@@ -127,6 +128,7 @@ section#langs {
         >div {
             display: flex;
             flex-flow: row wrap;
+            row-gap: 3.5rem;
             justify-content: center;
             align-content: space-around;
             align-items: center;
@@ -138,10 +140,17 @@ section#langs {
     #backend {
         flex-grow: 2;
     }
+    #deployment {
+        flex-grow: 2;
+    }
     #tools {
         flex-grow: 1;
     }
+    .type {
+        flex-grow: 2 !important;
+    }
     .lang {
+        position: relative;
         margin: 10px;
         display: inline-flex;
         justify-content: center;
@@ -149,17 +158,56 @@ section#langs {
         border-radius: calc(3.5vmax * ( 25 / 70 ));
         border-radius: 25px;
         border: 1px white solid;
+        .crown {
+            display: none;
+        }
         &.gold {
-            border: 3px #FCF300 solid;
+            border: 3px #FFD700 solid;
+            .crown {
+                display: none;
+                position: absolute;
+                transform-origin: top left;
+                object-fit: contain;
+                height: 24px;
+                width: 24px;
+                top: 3px;
+                right: 3px;
+            }
         }
         height: 4vmax;
         width: 4vmax;
         height: 70px;
         width: 70px;
+        img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+        }
         i {
             font-size: 1.75vmax;
             font-size: 40px;
             color: lighten(#86BBD8,25%);
+        }
+        .tooltip {
+            display: block;
+            visibility: hidden;
+            position: absolute;
+            opacity: 0;
+            top: 60px;
+            transition: all .3s;
+            .gold {
+                color: #ffcf4e;
+                @extend .bigbold;
+            }
+        }
+        cursor: pointer;
+        &:hover, &:active {
+            .tooltip {
+                display: block;
+                visibility: visible;
+                top: 72px;
+                opacity: 100%;
+            }
         }
     }
 }
@@ -191,6 +239,9 @@ section#langs {
         height: 100%;
         #graphic-designer {
             background-color: #F991CC;
+            * {
+                color: white;
+            }
         }
         #coding {
             background-color: #9479ed;
@@ -239,7 +290,8 @@ section#langs {
 
 #projects {
     width: 100%;
-    background-image: linear-gradient(darken(#86BBD8, 8%), lighten(#86BBD8, 10%));
+    background-image: linear-gradient(darken(#86BBD8, 8%), lighten(#86BBD8, 0%));
+    background-color: darken(#86BBD8, 8%);
     > p {
         font-size: 2em;
         padding: 6vmin 0;
@@ -249,64 +301,6 @@ section#langs {
         border-top-color: rgba(255,255,255,0.2);
         border-bottom-color: rgba(255,255,255,0.2);
     }
-    n.project {
-        display: flex;
-        flex-flow: row nowrap;
-        gap:6vmin;
-        justify-content: space-between;
-        align-items: stretch;
-        align-content: stretch;
-        background-color: darken(#f37490, 0%);
-        border: none;
-        border-radius: 5vmin;
-        
-
-        margin: 7vmin 0 0 0;
-        padding: 5vmin;
-        .info {
-            .main {
-                @extend .big, .bold;
-                font-size: 2.61803398875em;
-                padding-bottom: 2vmin;
-            }
-            p {
-                color:white;
-            }
-            p.explanation {
-                padding-bottom: 1rem;
-            }
-            ul {
-                padding-left: 1.2rem;
-                list-style-type: disc;
-                color:white;
-                li {
-                    margin-left: 1.25rem;
-                    color:white;
-                }
-            }
-        }
-        .spliter {
-            background-color: white;
-            width: 2px;
-            height: 100%;
-            margin: 0 7vmin;
-        }
-        .spacer {
-            background-color: transparent;
-            width: 2px;
-            height: 100%;
-            margin: 0 7vmin;
-        }
-        .image{
-            display: flex;
-            justify-content: center;
-            height: 50vh;
-            img {
-                border-radius: 1vmin;
-                object-fit: contain;
-            }
-        }
-    }
 }
 
 #bg-grass {
@@ -315,7 +309,7 @@ section#langs {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: lighten(#86BBD8, 10%);
+    background-image: linear-gradient(lighten(#86BBD8, 0%), lighten(#86BBD8, 10%));
     > img {
         position: absolute;
         bottom: 0;
@@ -339,8 +333,8 @@ section#langs {
 }
 
 #contact {
-    // background-color: #1B1E3A;
     background-image: url("images/dirt.svg");
+    background-repeat: repeat;
     p.main {
         text-align: center;
         font-size: 2em;
@@ -414,4 +408,57 @@ section#langs {
 
 #details {
     padding: 4vmin 5vmin;
+}
+
+.arrow-button {
+    display: flex;
+    color: lighten(#C2FFE9,4%);
+    transition: all .3s ease;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+    gap:0.5rem;
+}
+
+.arrow-button > .arrow {
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid #C2FFE9;
+    border-bottom: 2px solid #C2FFE9;
+    position: relative;
+    transform: rotate(45deg);
+    margin: 0 6px;
+    transition: all .3s ease;
+}
+
+.arrow-button > .arrow::before {
+    display: block;
+    background-color: currentColor;
+    width: 3px;
+    transform-origin: bottom right;
+    height: 2px;
+    position: absolute;
+    opacity: 0;
+    bottom: calc(-2px / 2);
+    transform: rotate(45deg) translate(0,0.5px);
+    transition: all .3s ease;
+    content: "";
+    right: 0;
+}
+
+.arrow-button:hover > .arrow {
+    transform: rotate(45deg) translate(2px, 2px);
+    border-color: text-hover-color;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+}
+
+.arrow-button:hover > .arrow::before {
+    opacity: 1;
+    width: 8px;
+    transform: rotate(45deg) translate(-1px,0.5px);
+}
+
+.arrow-button:hover {
+    color: #fff;
 }

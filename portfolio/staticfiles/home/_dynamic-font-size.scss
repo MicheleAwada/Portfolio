@@ -1,0 +1,38 @@
+@mixin text-lg {
+    font-size: 1.125px * 16;
+}
+
+@mixin text-md {
+    font-size: 1px * 16;
+}
+
+@mixin text-sm {
+font-size: 0.875px * 16;
+}
+@mixin text-xs {
+font-size: 0.75px * 16;
+}
+
+@mixin responsive-text {
+    @include text-sm;
+
+    @media (max-width: 480px) {
+        @include text-xs;
+    }
+
+    @media (min-width: 640px) {
+        @include text-md;
+    }
+
+    // @media (min-width: 768px) {
+    //     @include text-lg;
+    // }
+
+    // @media (min-width: 1024px) {
+    //     @include text-lg;
+    // }
+}
+
+html {
+    @include responsive-text;
+}

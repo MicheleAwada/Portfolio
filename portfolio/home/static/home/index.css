@@ -36,7 +36,7 @@ p, span, a, h1, h2, h3, h4, h5, h6 {
   background-image: linear-gradient(to bottom, #33396e, #3c8fbc);
 }
 
-.bold, #projects n.project .info .main, #whoami p.sub {
+.bold, #whoami p.sub {
   font-weight: 500 !important;
 }
 
@@ -44,11 +44,11 @@ p, span, a, h1, h2, h3, h4, h5, h6 {
   font-weight: 700 !important;
 }
 
-.bigbold {
+.bigbold, section#langs .lang .tooltip .gold {
   font-weight: 600 !important;
 }
 
-.big, #projects n.project .info .main, #whoami p.main {
+.big, #whoami p.main {
   font-size: 1.6180339888em !important;
 }
 
@@ -99,7 +99,8 @@ header {
 }
 
 #whoami {
-  background-image: linear-gradient(to bottom, #1B1E3A, #2b305d);
+  background-image: linear-gradient(#1B1E3A, #2b305d);
+  background-size: cover;
   margin: 0;
   padding: 0;
   border: none;
@@ -139,6 +140,7 @@ section#langs .type {
 section#langs .type > div {
   display: flex;
   flex-flow: row wrap;
+  row-gap: 3.5rem;
   justify-content: center;
   align-content: space-around;
   align-items: center;
@@ -149,10 +151,17 @@ section#langs #frontend {
 section#langs #backend {
   flex-grow: 2;
 }
+section#langs #deployment {
+  flex-grow: 2;
+}
 section#langs #tools {
   flex-grow: 1;
 }
+section#langs .type {
+  flex-grow: 2 !important;
+}
 section#langs .lang {
+  position: relative;
   margin: 10px;
   display: inline-flex;
   justify-content: center;
@@ -164,14 +173,50 @@ section#langs .lang {
   width: 4vmax;
   height: 70px;
   width: 70px;
+  cursor: pointer;
+}
+section#langs .lang .crown {
+  display: none;
 }
 section#langs .lang.gold {
-  border: 3px #FCF300 solid;
+  border: 3px #FFD700 solid;
+}
+section#langs .lang.gold .crown {
+  display: none;
+  position: absolute;
+  transform-origin: top left;
+  object-fit: contain;
+  height: 24px;
+  width: 24px;
+  top: 3px;
+  right: 3px;
+}
+section#langs .lang img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 section#langs .lang i {
   font-size: 1.75vmax;
   font-size: 40px;
   color: #e6f1f7;
+}
+section#langs .lang .tooltip {
+  display: block;
+  visibility: hidden;
+  position: absolute;
+  opacity: 0;
+  top: 60px;
+  transition: all 0.3s;
+}
+section#langs .lang .tooltip .gold {
+  color: #ffcf4e;
+}
+section#langs .lang:hover .tooltip, section#langs .lang:active .tooltip {
+  display: block;
+  visibility: visible;
+  top: 72px;
+  opacity: 100%;
 }
 
 #white-space {
@@ -203,6 +248,9 @@ section#langs .lang i {
 #experience > section #graphic-designer {
   background-color: #F991CC;
 }
+#experience > section #graphic-designer * {
+  color: white;
+}
 #experience > section #coding {
   background-color: #9479ed;
 }
@@ -229,7 +277,7 @@ section#langs .lang i {
 #experience > section > div p span {
   color: white;
 }
-#experience > section > div p.bold.big, #experience > section > div #projects n.project .info p.main, #projects n.project .info #experience > section > div p.main, #experience > section > div #whoami p.big.sub, #whoami #experience > section > div p.big.sub, #experience > section > div #whoami p.bold.main, #whoami #experience > section > div p.bold.main, #experience > section > div #whoami p.sub.main, #whoami #experience > section > div p.sub.main {
+#experience > section > div p.bold.big, #experience > section > div #whoami p.big.sub, #whoami #experience > section > div p.big.sub, #experience > section > div #whoami p.bold.main, #whoami #experience > section > div p.bold.main, #experience > section > div #whoami p.sub.main, #whoami #experience > section > div p.sub.main {
   display: block;
   margin-top: auto;
   padding-top: 2vmin;
@@ -248,7 +296,8 @@ section#langs .lang i {
 
 #projects {
   width: 100%;
-  background-image: linear-gradient(#67aace, #add1e4);
+  background-image: linear-gradient(#67aace, #86bbd8);
+  background-color: #67aace;
 }
 #projects > p {
   font-size: 2em;
@@ -259,59 +308,6 @@ section#langs .lang i {
   border-top-color: rgba(255, 255, 255, 0.2);
   border-bottom-color: rgba(255, 255, 255, 0.2);
 }
-#projects n.project {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 6vmin;
-  justify-content: space-between;
-  align-items: stretch;
-  align-content: stretch;
-  background-color: #f37490;
-  border: none;
-  border-radius: 5vmin;
-  margin: 7vmin 0 0 0;
-  padding: 5vmin;
-}
-#projects n.project .info .main {
-  font-size: 2.6180339888em;
-  padding-bottom: 2vmin;
-}
-#projects n.project .info p {
-  color: white;
-}
-#projects n.project .info p.explanation {
-  padding-bottom: 1rem;
-}
-#projects n.project .info ul {
-  padding-left: 1.2rem;
-  list-style-type: disc;
-  color: white;
-}
-#projects n.project .info ul li {
-  margin-left: 1.25rem;
-  color: white;
-}
-#projects n.project .spliter {
-  background-color: white;
-  width: 2px;
-  height: 100%;
-  margin: 0 7vmin;
-}
-#projects n.project .spacer {
-  background-color: transparent;
-  width: 2px;
-  height: 100%;
-  margin: 0 7vmin;
-}
-#projects n.project .image {
-  display: flex;
-  justify-content: center;
-  height: 50vh;
-}
-#projects n.project .image img {
-  border-radius: 1vmin;
-  object-fit: contain;
-}
 
 #bg-grass {
   position: relative;
@@ -319,7 +315,7 @@ section#langs .lang i {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #add1e4;
+  background-image: linear-gradient(#86bbd8, #add1e4);
 }
 #bg-grass > img {
   position: absolute;
@@ -344,6 +340,7 @@ section#langs .lang i {
 
 #contact {
   background-image: url("images/dirt.svg");
+  background-repeat: repeat;
 }
 #contact p.main {
   text-align: center;
@@ -416,4 +413,57 @@ section#langs .lang i {
 
 #details {
   padding: 4vmin 5vmin;
+}
+
+.arrow-button {
+  display: flex;
+  color: #d6fff0;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  cursor: pointer;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.arrow-button > .arrow {
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid #C2FFE9;
+  border-bottom: 2px solid #C2FFE9;
+  position: relative;
+  transform: rotate(45deg);
+  margin: 0 6px;
+  transition: all 0.3s ease;
+}
+
+.arrow-button > .arrow::before {
+  display: block;
+  background-color: currentColor;
+  width: 3px;
+  transform-origin: bottom right;
+  height: 2px;
+  position: absolute;
+  opacity: 0;
+  bottom: -1px;
+  transform: rotate(45deg) translate(0, 0.5px);
+  transition: all 0.3s ease;
+  content: "";
+  right: 0;
+}
+
+.arrow-button:hover > .arrow {
+  transform: rotate(45deg) translate(2px, 2px);
+  border-color: text-hover-color;
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+}
+
+.arrow-button:hover > .arrow::before {
+  opacity: 1;
+  width: 8px;
+  transform: rotate(45deg) translate(-1px, 0.5px);
+}
+
+.arrow-button:hover {
+  color: #fff;
 }/*# sourceMappingURL=index.css.map */
